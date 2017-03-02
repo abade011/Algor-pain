@@ -1,0 +1,59 @@
+#+TITLE: Algorithms & Data Structures: Lab 11
+#+SUBTITLE: week of 9th January 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Installing and configuring software
+   In this series of labs, you will be asked to write programmes with
+   specified behaviours.  You will be provided with test cases which
+   probe whether you have correctly implemented your programmes, but
+   to run them you will need to configure and install software: [[http://junit.org/junit4/][JUnit4]]
+   or [[https://freedesktop.org/wiki/Software/cppunit/][cppunit]] for Java and C++, respectively.  Follow the instructions
+   [[https://learn.gold.ac.uk/mod/url/view.php?id=401891][on the VLE]] to identify what you need to do, and the respective
+   installation instructions for the software you need to get started.
+** Getting the lab distribution
+   You will also need to get the lab code, which is distributed from a
+   [[http://gitlab.doc.gold.ac.uk/crhodes/is52038-labs][git repository]] hosted on the [[http://gitlab.doc.gold.ac.uk][Department's gitlab instance]].  You
+   should be able to issue the following command:
+#+begin_example
+  git clone http://gitlab.doc.gold.ac.uk/crhodes/is52038-labs.git
+#+end_example
+   and the lab bundle code will be downloaded to the =is52038-labs=
+   directory relative to your current directory.
+* Linked list class
+** Implementation
+   In this part, you are required to implement a =Node= class, whose
+   basic methods are: =getItem()=, =getNext()=, =setItem()= and =setNext()=.
+   The nodes should be able to store at least the default integer
+   range in your programming language as the “item”; the “next” should
+   be a reference or pointer to the next =Node= in a linked list, or
+   the special =Node= =NIL= if this is the last node in the list.
+
+   You should also provide a two-argument constructor which suitably
+   initializes instances with the given item (first argument) and next
+   node (second argument).
+
+   You should use the appropriate skeleton code (found in
+   =11/java/Node.java= or =11/cpp/Node.cpp=) as a starting point; the
+   tests are written assuming those method signatures.  You may also
+   wish to refer to Questions 2-5 of Activity 2.7 in the subject
+   guide.
+
+   Test your implementation using
+#+begin_example
+  make test
+#+end_example
+   in the appropriate code directory.
+** Extension
+   Implement methods =nthItem()= and =nthNext()=, such that they
+   return the =item= or =next= respectively in the nth =Node= in the
+   list, counting from zero (so =nthItem(0)= should return the item in
+   the current =Node=).  Consider what should happen if the list is
+   shorter than the index of the node requested.
+
+   Test your implementation using
+#+begin_example
+  make test2
+#+end_example
+   in the appropriate code directory.

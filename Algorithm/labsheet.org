@@ -1,0 +1,7 @@
+#+OPTIONS: toc:nil author:nil date:nil
+
+#+LaTeX_HEADER: \usepackage{fontspec}
+#+LaTeX_HEADER: \setmainfont[Mapping=tex-text]{Libertinus Serif}\setsansfont[Mapping=tex-text]{Libertinus Sans}
+#+LaTeX_HEADER: \usepackage{unicode-math}
+#+LaTeX_HEADER: \setmathfont{Libertinus Math}
+#+LaTeX_HEADER: \usepackage[margin=1in]{geometry}

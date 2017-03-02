@@ -1,0 +1,73 @@
+#+TITLE: Algorithms & Data Structures: Lab 14
+#+SUBTITLE: week of 30th January 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Saving your work from last week
+   As with all previous weeks, you will use =git= to download a bundle
+   of lab code.  You will probably have made modifications in your
+   downloaded copy; if you have not already done so, you need to save
+   those modifications.  First examine the changes present in your
+   downloaded copy by issuing the following commands from the labs
+   directory:
+#+begin_example
+  git status
+  git diff
+#+end_example
+   and if you are satisfied with the changes, store them in the git
+   version control system by doing
+#+begin_example
+  git commit -a
+#+end_example
+   and writing a suitable commit message
+** Downloading this week's distribution
+   Once you have successfully saved your changes from last week, you
+   can get my updates by doing
+#+begin_example
+  git pull
+#+end_example
+   which /should/ automatically merge in new content.  After the =git
+   pull= command, you should have a new directory containing this
+   week's material (named =14/=) alongside the existing =11/=, =12/=
+   and =13/= directories.
+* Heap class
+** Implementing the class
+   I have provided you with a skeleton implementation of a heap, along
+   with a set of tests.
+
+   1. check that you can compile the skeleton implementation.
+   2. run the tests, and check that all the tests fail.
+   3. implement the methods required.  I suggest attempting them in
+      the following order:
+      1. the parent / left-child / right-child helper routines;
+      2. the simple constructor (with a single int argument, being the
+         size of the heap storage area);
+      3. insert
+      4. maximum
+      5. the incremental constructor
+      6. maxHeapify and buildMaxHeap
+      7. the direct (non-incremental) constructor
+      After each step, run the tests once more, and check that the
+      number of failing tests has decreased.
+** Timing constructors
+   Write code to construct heaps with 10, 100, 1000, 10000, ... random
+   elements.  Time the construction using both the incremental and the
+   direct constructors.  Can you verify the time complexity given in
+   the lectures for the two different constructors?  Is one of them
+   always faster than the other?
+** Implement heapsort
+   I have been providing tests for you, to help guide your
+   implementations and give you instant feedback on your work.  In
+   professional development, it is more usual for the same developers
+   (or team of developers) to produce tests as to produce the
+   functional code.
+
+   Implement heapsort.  You will need to:
+   1. extend the skeleton to add a method with an appropriate signature;
+   2. implement the heapsort method itself;
+   3. write tests to check the functionality of heapsort;
+   4. add the tests to the test suite by editing the Makefile
+      appropriately.
+   (Before you start, think about which order you will do these things
+   in, and why.)

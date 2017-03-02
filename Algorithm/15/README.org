@@ -1,0 +1,84 @@
+#+TITLE: Algorithms & Data Structures: Lab 15
+#+SUBTITLE: week of 6th February 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Saving your work from last week
+   As with all previous weeks, you will use =git= to download a bundle
+   of lab code.  You will probably have made modifications in your
+   downloaded copy; if you have not already done so, you need to save
+   those modifications.  First examine the changes present in your
+   downloaded copy by issuing the following commands from the labs
+   directory:
+#+begin_example
+  git status
+  git diff
+#+end_example
+   and if you are satisfied with the changes, store them in the git
+   version control system by doing
+#+begin_example
+  git commit -a
+#+end_example
+   and writing a suitable commit message
+** Downloading this week's distribution
+   Once you have successfully saved your changes from last week, you
+   can get my updates by doing
+#+begin_example
+  git pull
+#+end_example
+   which /should/ automatically merge in new content.  After the =git
+   pull= command, you should have a new directory containing this
+   week's material (named =15/=) alongside the existing =11/=, =12/=,
+   =13/= and =14/= directories.
+* Binary search
+  Implement binary search on sorted arrays, as described in the
+  lectures.  You are provided with skeleton files and test files, as
+  usual; running =make test= in the =cpp/= or =java/= directory should
+  provide you with a test failure report, and once you have
+  successfully implemented binary search, you should be able to rerun
+  the tests with success.
+
+  Are there (possibly invalid) combinations of arguments to your
+  implementation of your =search= function which would lead to
+  erroneous results or infinite loops?  Can you write a test case to
+  expose the bad behaviour?  Send a pull request to the lab bundle
+  with your new test.
+* List visualiser
+** Implementing a class to visualise a list
+   You have (in weeks 11-13) already implemented a singly-linked list
+   class in terms of =Node= objects.  For this part of the lab, you
+   must implement a method to visualise a linked list object.
+
+   Specifically, you must implement a =ListVisualiser= class, with a
+   public method =visualise(Node n)= (Java) / =visualise(Node *n)=
+   (C++); that method should display the list using the
+   box-and-pointer notation from lecture slides.  You may use any
+   reasonable ASCII text-based representation, for example
+   representing the list [1,11,23] as
+#+BEGIN_EXAMPLE
+[*|*]->[*|*]->[*|/]
+ |      |      |
+ 1      11     23
+#+END_EXAMPLE
+   or at your own risk you can implement a more advanced
+   visualisation, using Unicode box-drawing characters, or a graphical
+   library.
+
+   Test your visualiser using your own =Node= implementation, and my
+   provided driver file.
+** Peer-assessment
+   You must submit your =ListVisualiser= source code, along with any
+   auxiliary files it needs to build (/e.g./ a header file) but *not*
+   your =Node= implementation, to the [[https://learn.gold.ac.uk/mod/workshop/view.php?id=408975][List Visualiser Activity on the
+   VLE]] by *16:00* on *Monday 20th February*.
+
+   You should include in your submission, which can be a ZIP file, any
+   instructions for compilation or use of your code which would be
+   helpful to another member of the class, as they will need to be
+   able to compile and use your code in order to assess it and provide
+   you with feedback.
+
+   Failure to submit your source code will lead to an *automatic mark
+   of zero* for both the submission and the assessment portion of this
+   activity.

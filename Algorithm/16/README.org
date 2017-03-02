@@ -1,0 +1,68 @@
+#+TITLE: Algorithms & Data Structures: Lab 16
+#+SUBTITLE: week of 20th February 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Saving your work from last week
+   As with all previous weeks, you will use =git= to download a bundle
+   of lab code.  You will probably have made modifications in your
+   downloaded copy; if you have not already done so, you need to save
+   those modifications.  First examine the changes present in your
+   downloaded copy by issuing the following commands from the labs
+   directory:
+#+begin_example
+  git status
+  git diff
+#+end_example
+   and if you are satisfied with the changes, store them in the git
+   version control system by doing
+#+begin_example
+  git commit -a
+#+end_example
+   and writing a suitable commit message
+** Downloading this week's distribution
+   Once you have successfully saved your changes from last week, you
+   can get my updates by doing
+#+begin_example
+  git pull
+#+end_example
+   which /should/ automatically merge in new content.  After the =git
+   pull= command, you should have a new directory containing this
+   week's material (named =16/=) alongside the existing =11/= to =15/=
+   directories.
+* Dynamic Arrays
+  Implement a dynamic array data structure, supporting the operations
+  detailed in the lecture.  You are provided with skeleton files and
+  test files, as usual; running =make test= in the =cpp/= or =java/=
+  directory should provide you with a test failure report, and once
+  you have successfully implemented a dynamic array data structure,
+  you should be able to rerun the tests I provide with success.
+
+  Because the underlying storage array is not part of the abstract
+  data type, I am unable to write deterministic tests that it is
+  extended in a way that does not lead to quadratic behaviour.  Expose
+  enough of the implementation details of your storage array to be
+  able to write a test that the storage array is extended
+  appropriately, and write a test case.  Check that your test case
+  fails if you extend the storage array by a constant number of
+  elements each time.
+
+  (A well-crafted implementation of dynamic arrays, with some details
+  of its implementation exposed, might be of assistance in answering
+  questions 7-10 of the [[https://learn.gold.ac.uk/mod/quiz/view.php?id=410968][dynamic arrays quiz]].)
+* List visualiser
+** Peer assessment
+   If you have not already done so, and you yourself submitted an
+   implementation of a =ListVisualiser= class, you should now have
+   some of your peers' submissions to assess.  Read the code
+   submitted, use my driver files (or your own) to assess your
+   allocated submissions according to the rubric provided, and write
+   suitable feedback comments to help your peers improve or to tell
+   them what you've learnt by reading their submission.
+
+   You must submit your assessments by *16:00* on *Monday 27th
+   February*.  Failure to submit assessments will lead to an
+   *automatic mark of zero* for the assessment portion of this
+   activity, though you will retain your mark for the submission
+   portion.

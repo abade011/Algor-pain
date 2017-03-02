@@ -1,0 +1,75 @@
+#+TITLE: Algorithms & Data Structures: Lab 12
+#+SUBTITLE: week of 16th January 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Saving your work from last week
+   Last week, you used =git= to download a bundle of lab code.  I will
+   be updating that bundle, and making the changes available using
+   =git=.  You will probably have made modifications in your
+   downloaded copy; if you have not already done so, you need to save
+   those modifications.  First examine the changes present in your
+   downloaded copy by issuing the following commands from the labs
+   directory:
+#+begin_example
+  git status
+  git diff
+#+end_example
+   and if you are satisfied with the changes, store them in the git
+   version control system by doing
+#+begin_example
+  git commit -a
+#+end_example
+   and writing a suitable commit message
+** Downloading this week's distribution
+   Once you have successfully saved your changes from last week, you
+   can get my updates by doing
+#+begin_example
+  git pull
+#+end_example
+   which /should/ automatically merge in new content.  After the =git
+   pull= command, you should have a new directory containing this
+   week's material (named =12/=) alongside the existing =11/=
+   directory.
+* Linked list class (cont'd)
+** Setup
+   Start from the work you completed from Lab 11: a linked list class
+   implemented in terms of =Node= objects, with methods:
+   * =getItem()=
+   * =getNext()=
+   * =setItem(i)=
+   * =setNext(n)=
+   Verify that your implementation compiles with the new distribution,
+   by running =make= in the appropriate subdirectory (=12/cpp= or
+   =12/java=).
+** Length
+   Implement =length=, which calculates the length of a linked
+   list.  If you are unsure how to start, review the [[https://learn.gold.ac.uk/mod/url/view.php?id=404893][section on linked
+   lists]] from the [[https://learn.gold.ac.uk/mod/url/view.php?id=404889][week 11 lecture]], and use the first part of the
+   walkthrough at
+   [[http://www.doc.gold.ac.uk/~mas01cr/teaching/is52038b/2016-17/ListAlgorithms.html]].
+   Check your implementation against the tests provided by running
+   =make test= (and reading just the output relevant to length tests).
+** Remove
+   Implement =remove=, which returns a new list whose contents are the
+   same as the original list, but with all instances of the given
+   object removed.  Use the second part of [[http://www.doc.gold.ac.uk/~mas01cr/teaching/is52038b/2016-17/ListAlgorithms.html][the walkthrough on list
+   algorithms]] to guide you, and check your implementation against the
+   provided test cases.
+** Reverse
+   Implement =reverse=, which returns a new list whose contents are
+   the same as the original list but in reverse order.  Check your
+   implementation against the provided test cases.  What are the time
+   and space complexity of your solution?
+** Other list algorithms
+   Write out the base case and recursive step for the following
+   algorithms:
+   - sum :: find the sum of the elements in a list
+   - max :: find the maximum value of the elements in a list
+   - append :: concatenate two lists together
+   - merge :: merge two already-sorted lists to make one larger sorted list
+
+   Without altering your existing =Node= implementation, write methods
+   or functions as appropriate to perform these operations.  How will
+   you test your implementations?

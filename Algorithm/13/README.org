@@ -1,0 +1,68 @@
+#+TITLE: Algorithms & Data Structures: Lab 13
+#+SUBTITLE: week of 23rd January 2017
+
+#+include: ../labsheet.org
+
+* Setup
+** Saving your work from last week
+   As with last week, you used =git= to download a bundle of lab code.
+   I have had to update some code in that bundle, as well as provide
+   this week's code; everything is available using =git=.  You will
+   probably have made modifications in your downloaded copy; if you
+   have not already done so, you need to save those modifications.
+   First examine the changes present in your downloaded copy by
+   issuing the following commands from the labs directory:
+#+begin_example
+  git status
+  git diff
+#+end_example
+   and if you are satisfied with the changes, store them in the git
+   version control system by doing
+#+begin_example
+  git commit -a
+#+end_example
+   and writing a suitable commit message
+** Downloading this week's distribution
+   Once you have successfully saved your changes from last week, you
+   can get my updates by doing
+#+begin_example
+  git pull
+#+end_example
+   which /should/ automatically merge in new content.  After the =git
+   pull= command, you should have a new directory containing this
+   week's material (named =13/=) alongside the existing =11/= and =12/=
+   directories.
+* Linked list class (cont'd)
+** Timing
+   All the algorithms you implemented in week 12 should be linear in
+   the number of nodes in the list.
+
+   1. Inspect and analyse your implementation of =length=; can you
+      prove that it is linear?
+   2. Write code to create a list of a given length, and runs =length=
+      on it.  Find a length such that, on your computer, running the
+      =length= method takes about a tenth of a second.  Now re-run the
+      code but with ten times as many nodes.  How long does your code
+      take to run?
+   3. Repeat the above investigation with =remove= and =reverse=.
+   4. Run the provided =Timing12Test= test code, which attempts to
+      test the linear scaling of your implementations.  Does running
+      this test code agree with your findings?
+   5. If any of your implementations are not Θ(N), rewrite them so that
+      they are.
+** Circularity detection
+   1. In the file =CycleDetection= (=.java= or =.cpp= as appropriate
+      to your programming language choice), implement =isCyclic=, to
+      detect whether a given list has a cycle in it or not.  Test your
+      implementation using the provided =CycleTest= test code (bear in
+      mind that some tests are used to check part 2, below, so will
+      still fail at this point).
+   2. Implement =cycleInfo=, which should return =NULL= (C++) / =null=
+      (Java) if the given list is not cyclic, or a =CycleInfo=
+      instance to indicate the start and length of the cycle.  Test
+      your implementation using the provided =CycleTest= code.
+   3. Now that you have implemented =cycleInfo=, can you simplify your
+      implementation of =isCyclic=?
+   4. How would you integrate cycle detection to defend your
+      implementations of linear list algorithms against cyclic list
+      inputs?
